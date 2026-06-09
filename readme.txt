@@ -1,31 +1,29 @@
-Plantilla Responsive HTML5 con Bootstrap
+Plantilla Responsive HTML5 con Bootstrap - HO Estibajes
 
-Car Care es una plantilla web desarrollada con HTML5, CSS3 y Bootstrap, diseñada para concesionarios de autos, tiendas de repuestos y centros de servicio. Es completamente adaptable para usar en ordenadores y móviles.
+Esta es la documentación y adaptación de la plantilla web desarrollada con HTML5, CSS3 y Bootstrap, personalizada para HO Estibajes y Marítimos S.R.L. El diseño es completamente adaptable (Responsive) para una visualización óptima en ordenadores, tablets y dispositivos móviles.
 
 Características clave
 -------------
-Twitter Bootstrap 3.3.1
-Clean & Developer-friendly HTML5 and CSS3 code
-100% Responsive Layout Design 
-Multi-purpose theme
-Google Fonts Support
-Font Awesome 
-Smooth Scrolling 
-Fully Customizable
-Contact Form
+- Framework: Twitter Bootstrap
+- Código HTML5 y CSS3 limpio, optimizado y estructurado
+- Diseño 100% adaptable (Responsive Layout Design)
+- Tipografías integradas mediante Google Fonts Support
+- Iconografía vectorial limpia con soporte SVG / Font Awesome
+- Navegación fluida (Smooth Scrolling)
+- Secciones personalizadas: Inicio, Nosotros, Servicios, Portafolio, Precios y Contacto
+- Formulario de Contacto funcional con sistema de validación anti-spam
 
-Créditos
--------
-=> Design and developed: "WebThemez"  http://webthemez.com
-=> Photos used in template: **Unsplash** - http://unsplash.com
-=> For more free web themes: http://webthemez.com
-=> Framework : http://getbootstrap.com
-=> For more help: webthemez@gmail.com
-=> Do not remove the back-link from site. If you want remove back-link please donate some bucks.
+Créditos Originales y Licencia
+------------------------------
+=> Diseñado y desarrollado originalmente por: "WebThemez" - http://webthemez.com
+=> Framework base: http://getbootstrap.com
+=> Imágenes de demostración: Unsplash - http://unsplash.com
+=> Soporte del desarrollador original: webthemez@gmail.com
 
-License :
--------
-**Creative Commons Attribution 3.0** - http://creativecommons.org/licenses/by/3.0/
+Licencia de uso:
+----------------
+Creative Commons Attribution 3.0 (http://creativecommons.org/licenses/by/3.0/)
+Nota importante: Se mantiene el enlace de atribución (back-link) en el pie de página hacia el autor original de acuerdo con los términos de la licencia gratuita, o se gestionará la opción de remoción mediante la contribución correspondiente al autor.
 
-Note:
-All images user here is for demo purpose only, we are not responsible for any copyrights.
+Nota de Imágenes:
+Las imágenes utilizadas en esta estructura son para fines ilustrativos y demostración de diseño del portafolio y servicios logísticos.

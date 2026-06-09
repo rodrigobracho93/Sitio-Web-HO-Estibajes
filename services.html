@@ -3,250 +3,325 @@
 <head>
 <meta charset="utf-8">
 <title>Servicios | HO Estibajes y Marítimos S.R.L.</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Servicios especializados de estibaje fluvial, descarga de camiones a tolva, operaciones logísticas y servicios generales en San Antonio, Paraguay." />
-<meta name="author" content="HO Estibajes y Marítimos S.R.L." />
-<!-- Favicon -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Servicios especializados de estibaje fluvial, descarga de camiones a tolva, operaciones logísticas y servicios generales en San Antonio, Paraguay.">
 <link rel="icon" href="img/logoHO.ico" type="image/png">
-<!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
- 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
+:root{
+  --navy:#0B1F3A;
+  --navy-mid:#122847;
+  --navy-light:#1A3A5C;
+  --steel:#2E6DA4;
+  --steel-light:#4A8FC0;
+  --amber:#E8A020;
+  --amber-dark:#C48318;
+  --off-white:#F5F3EE;
+  --gray-100:#ECEAE5;
+  --gray-300:#B8B5AE;
+  --gray-500:#7A7770;
+  --gray-800:#2C2A27;
+  --white:#FFFFFF;
+  --font-display:'Barlow Condensed',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --radius:6px;
+  --radius-lg:12px;
+  --shadow-card:0 2px 16px rgba(11,31,58,0.10);
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--gray-800);background:var(--white);line-height:1.65;font-size:16px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:2px solid var(--steel)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:0.75rem}
+.nav-logo img{height:40px;width:auto}
+.nav-logo span{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--white);letter-spacing:0.03em;line-height:1.2}
+.nav-links{display:flex;gap:0.25rem;list-style:none}
+.nav-links a{display:block;padding:0.4rem 0.85rem;color:rgba(255,255,255,0.8);font-size:0.88rem;font-weight:500;border-radius:var(--radius);transition:background 0.18s,color 0.18s}
+.nav-links a:hover,.nav-links a.active{background:var(--steel);color:var(--white)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;color:var(--white)}
+.nav-toggle svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.nav-mobile{display:none;background:var(--navy-mid);padding:1rem 1.5rem;list-style:none;gap:0.25rem;flex-direction:column}
+.nav-mobile a{display:block;padding:0.65rem 0.85rem;color:rgba(255,255,255,0.85);font-size:0.95rem;font-weight:500;border-radius:var(--radius);transition:background 0.18s}
+.nav-mobile a:hover{background:var(--steel);color:var(--white)}
+.nav-mobile.open{display:flex}
+
+/* INNER HEADLINE */
+.inner-headline{background:var(--navy);padding:3rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+.inner-headline-inner{max-width:1100px;margin:0 auto}
+.inner-headline h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--white);letter-spacing:0.01em}
+
+/* SECTION SHARED */
+.section{padding:4.5rem 1.5rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel);margin-bottom:0.6rem}
+.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:1rem}
+.section-sub{color:var(--gray-500);font-size:1rem;max-width:580px;line-height:1.7;margin-bottom:3rem}
+
+/* SERVICES CARDS BLOCKS */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem}
+.service-card{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-100);background:var(--white);box-shadow:var(--shadow-card);transition:transform 0.22s,box-shadow 0.22s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(11,31,58,0.15)}
+.service-card img{width:100%;height:230px;object-fit:cover}
+.service-card-body{padding:1.75rem}
+.service-card h3{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--navy);margin-bottom:0.8rem;border-bottom:2px solid var(--gray-100);padding-bottom:0.5rem}
+.service-card p{font-size:0.95rem;color:var(--gray-800);margin-bottom:1.25rem}
+.service-card ul{list-style:none}
+.service-card ul li{font-size:0.9rem;color:var(--gray-800);padding:0.4rem 0;padding-left:1.2rem;position:relative;line-height:1.6}
+.service-card ul li::before{content:'';position:absolute;left:0;top:0.75rem;width:6px;height:6px;border-radius:50%;background:var(--steel)}
+
+/* SEPARATOR LINE */
+.separator{border:none;border-top:1px solid var(--gray-100);margin:4.5rem 0}
+
+/* INFO BLOCKS (INFERIOR) */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem 2rem}
+.info-block-item{display:flex;gap:1.25rem;align-items:flex-start}
+.info-icon{width:46px;height:46px;background:var(--navy);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.info-icon svg{width:22px;height:22px;stroke:var(--amber);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.info-text h3{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem}
+.info-text p{font-size:0.92rem;color:var(--gray-500);line-height:1.6}
+
+/* FOOTER */
+footer{background:var(--navy);padding:3rem 1.5rem 0}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer-brand img{height:48px;margin-bottom:0.75rem}
+.footer-brand p{color:rgba(255,255,255,0.6);font-size:0.875rem;line-height:1.7;max-width:280px;margin-bottom:1rem}
+.footer-social{display:flex;gap:0.5rem}
+.footer-social a{width:36px;height:36px;border-radius:var(--radius);background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);transition:background 0.18s,color 0.18s}
+.footer-social a:hover{background:var(--steel);color:var(--white)}
+.footer-social svg{width:16px;height:16px;fill:currentColor}
+.footer-col h5{font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.footer-col ul a{font-size:0.875rem;color:rgba(255,255,255,0.65);transition:color 0.18s}
+.footer-col ul a:hover{color:var(--white)}
+.footer-bottom{max-width:1100px;margin:0 auto;padding:1.25rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+.footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.4)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .footer-inner{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .nav-toggle{display:block}
+  .section{padding:3rem 1.25rem}
+  .services-grid{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-<div id="wrapper">
 
-    <!-- start header -->
-    <header>
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><img src="img/logoHO(120x120).png" alt="logo"/></a>
-                </div>
-                <div class="navbar-collapse collapse ">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Inicio</a></li> 
-                        <li><a href="about.html">Sobre Nosotros</a></li>
-                        <li class="active"><a href="services.html">Servicios</a></li>
-                        <li><a href="portfolio.html">Portafolio</a></li>
-                        <li><a href="pricing.html">Precios</a></li>
-                        <li><a href="contact.html">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- end header -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes">
+      <span>HO Estibajes<br>y Marítimos</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">Sobre Nosotros</a></li>
+      <li><a href="services.html" class="active">Servicios</a></li>
+      <li><a href="portfolio.html">Portafolio</a></li>
+      <li><a href="pricing.html">Precios</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <ul class="nav-mobile" id="navMobile">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="about.html">Sobre Nosotros</a></li>
+    <li><a href="services.html">Servicios</a></li>
+    <li><a href="portfolio.html">Portafolio</a></li>
+    <li><a href="pricing.html">Precios</a></li>
+    <li><a href="contact.html">Contacto</a></li>
+  </ul>
+</nav>
+
+<section class="inner-headline">
+  <div class="inner-headline-inner">
+    <h2>Servicios</h2>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
     
-    <section id="inner-headline">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="pageTitle">Servicios</h2>
-            </div>
-        </div>
-    </div>
-    </section>
-    
-    <section id="content">
-        <div class="container content">     
-        <!-- Service Blocks -->
-        <div class="row service-v1 margin-bottom-40">
-            <div class="col-md-4 md-margin-bottom-40">
-               <img class="img-responsive" src="img/service4.jpg" alt="Servicios Marítimos">   
-                <h2>Servicios Marítimos</h2>
-                <p style="text-align: justify;">Ofrecemos un <strong>servicio integral para barcazas graneleras</strong> que incluye:</p>
-                <ul>
-                    <li><strong>Carga Eficiente:</strong> Optimización de espacio y distribución de carga para maximizar la seguridad y la capacidad.</li>
-                    <li><strong>Nivelación y Estabilidad:</strong> Revisión y ajuste de carga para asegurar un equilibrio perfecto en cada embarcación.</li>
-                    <li><strong>Corrección de Escoras (Adrizajes):</strong> Mantenemos la estabilidad de las barcazas con un adrizaje preciso.</li>
-                    <li><strong>Amarres Seguros:</strong> Fijación confiable en puertos y terminales para garantizar operaciones sin riesgo.</li>
-                    <li><strong>Operación de Embarque:</strong> Gestión integral de carga, revisiones constantes del calado de la barcaza, pedidos de carga con flujo según la capacidad de las maquinarias e informes del seguimiento del embarque.</li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <img class="img-responsive" src="img/service5.jpg" alt="Estibaje de Camiones">            
-                <h2>Estibaje de Camiones</h2>
-                <p style="text-align: justify;">Ofrecemos un <strong>servicio completo de estibaje de camiones</strong> y manejo de productos en granel y contenedores:</p>
-                    <ul>
-                        <li><strong>Descarga Precisa a Tolva:</strong> Controlamos la descarga de camiones hacia tolvas, asegurando un proceso rápido y sin desperdicios.</li>
-                        <li><strong>Operación de Volcadoras y Montacargas:</strong> Personal capacitado para la operación de volcadoras y montacargas, garantizando seguridad y eficiencia en cada descarga.</li>
-                        <li><strong>Descarga Manual de Contenedores:</strong> Descarga cuidadosa y ordenada de contenedores para proteger la integridad de cada producto.</li>
-                        <li><strong>Etiquetado de Productos:</strong> Servicios de etiquetado para asegurar la correcta identificación y trazabilidad de la mercancía.</li>
-                        <li><strong>Calado de Productos de Grano:</strong> Calado preciso para asegurar la calidad y cantidad del producto descargado.</li>
-                    </ul>        
-            </div>
-            <div class="col-md-4 md-margin-bottom-40">
-              <img class="img-responsive" src="img/service6.jpg" alt="Servicios Generales">  
-                <h2>Servicios Generales</h2>
-                <p style="text-align: justify;">
-                    Ofrecemos <strong>soluciones completas de limpieza, mantenimiento y obras</strong> para diversos espacios industriales y comerciales, adaptadas a cada necesidad específica:
-                </p>
-                  <ul>
-                    <li><strong>Limpieza de Áreas Verdes:</strong> Mantenimiento de jardines, áreas recreativas y espacios exteriores para una imagen impecable.</li>
-                    <li><strong>Limpieza de Túneles:</strong> Servicios de limpieza especializados para túneles y espacios de difícil acceso, con equipos y técnicas de última generación.</li>
-                    <li><strong>Limpieza de Baños:</strong> Higienización profunda de instalaciones sanitarias, asegurando un ambiente limpio y seguro.</li>
-                    <li><strong>Limpieza de Oficinas y Comedores:</strong> Mantén tus áreas de trabajo y descanso en perfectas condiciones, promoviendo un entorno laboral saludable.</li>
-                    <li><strong>Pinturas en General:</strong> Servicios de pintura para interiores y exteriores, con acabados de calidad que prolongan la vida útil de las instalaciones.</li>
-                    <li><strong>Albañilería:</strong> Obras de albañilería para mantenimiento y mejora de infraestructuras, adaptadas a los requerimientos del espacio.</li>
-                    <li><strong>Plomería:</strong> Soluciones de plomería para instalación, reparación y mantenimiento de sistemas de agua y desagüe.</li>
-                  </ul>
-            </div>
-        </div>
-        <!-- End Service Blocks -->
+    <span class="section-label">Excelencia logística</span>
+    <h2 class="section-title">Nuestras Soluciones Integrales</h2>
+    <p class="section-sub">Brindamos soporte estratégico, técnico y operativo adaptado a las demandas del sector portuario, industrial y comercial en Paraguay.</p>
 
-        <hr class="margin-bottom-50">
+    <div class="services-grid">
 
-        <!-- Info Blocks Row 1 -->
-        <div class="row">
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-shield"></i>
-                <div class="info-blocks-in">
-                    <h3>Seguridad Industrial</h3>
-                    <p style="text-align: justify;">Todo nuestro personal opera bajo estrictos protocolos de seguridad y con Equipos de Protección Individual (EPI) homologados.</p>
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-clock-o"></i>
-                <div class="info-blocks-in">
-                    <h3>Disponibilidad 24/7</h3>
-                    <p style="text-align: justify;">Nos adaptamos a las ventanas operativas y turnos logísticos de los puertos para garantizar un flujo ininterrumpido.</p>
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-anchor"></i>
-                <div class="info-blocks-in">
-                    <h3>Experiencia Fluvial</h3>
-                    <p style="text-align: justify;">Especialistas en adrizaje, calado y manejo de convoyes de barcazas sobre la Hidrovía Paraguay-Paraná.</p>
-                </div>
-            </div>
+      <div class="service-card">
+        <img src="img/service4.jpg" alt="Servicios Marítimos">
+        <div class="service-card-body">
+          <h3>Servicios Marítimos</h3>
+          <p>Ofrecemos un servicio integral para barcazas graneleras enfocado en la seguridad operativa:</p>
+          <ul>
+            <li><strong>Carga Eficiente:</strong> Optimización de espacio y distribución de carga para maximizar la capacidad.</li>
+            <li><strong>Nivelación y Estabilidad:</strong> Revisión y ajuste para asegurar un equilibrio perfecto.</li>
+            <li><strong>Corrección de Escoras:</strong> Mantenemos la estabilidad de las barcazas con un adrizaje preciso.</li>
+            <li><strong>Amarres Seguros:</strong> Fijación confiable en terminales para garantizar operaciones sin riesgo.</li>
+            <li><strong>Operación de Embarque:</strong> Gestión integral de carga, control de calado e informes periódicos.</li>
+          </ul>
         </div>
-        <!-- End Info Blocks Row 1 -->
+      </div>
 
-        <!-- Info Blocks Row 2 -->
-        <div class="row">
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-check-square-o"></i>
-                <div class="info-blocks-in">
-                    <h3>Cero Mermas</h3>
-                    <p style="text-align: justify;">Optimizamos las descargas directas a tolva minimizando pérdidas de grano o subproductos durante el manipuleo.</p>
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-map-marker"></i>
-                <div class="info-blocks-in">
-                    <h3>Ubicación Estratégica</h3>
-                    <p style="text-align: justify;">Operando con base directa en San Antonio, Central, el polo de conectividad portuaria y fluvial de Paraguay.</p>
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-users"></i>
-                <div class="info-blocks-in">
-                    <h3>Mano de Obra Calificada</h3>
-                    <p style="text-align: justify;">Personal constantemente entrenado en estibaje técnico, manejo de maquinarias pesadas y mantenimiento.</p>
-                </div>
-            </div>
+      <div class="service-card">
+        <img src="img/service5.jpg" alt="Estibaje de Camiones">
+        <div class="service-card-body">
+          <h3>Estibaje de Camiones</h3>
+          <p>Manejo logístico completo de productos a granel, contenedores y mercaderías generales:</p>
+          <ul>
+            <li><strong>Descarga Precisa a Tolva:</strong> Control operativo hacia tolvas para un proceso rápido y limpio.</li>
+            <li><strong>Volcadoras y Montacargas:</strong> Operadores calificados que aseguran eficiencia en instalaciones terrestres.</li>
+            <li><strong>Vaciado de Contenedores:</strong> Descarga manual, ordenada y cuidadosa para resguardar el producto.</li>
+            <li><strong>Etiquetado de Productos:</strong> Servicios a medida para garantizar la trazabilidad de la mercancía.</li>
+            <li><strong>Calado de Granos:</strong> Muestreo técnico exacto para el control de calidad de la carga recibida.</li>
+          </ul>
         </div>
-        <!-- End Info Blocks -->
-        
-    </div>
-    </section>
-    
-    <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="widget">
-                    <h5 class="widgetheading">Contacto</h5>
-                    <address>
-                    <strong>HO Estibajes y Marítimos S.R.L.</strong><br>
-                    Av. San Jorge casi Caranday<br>
-                    San Antonio, Central, Paraguay.</address>
-                    <p>
-                        <i class="icon-phone"></i> +595 981 142055 <br>
-                        <i class="icon-envelope-alt"></i> ho.estibajes@gmail.com
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="widget">
-                    <h5 class="widgetheading">Enlaces Rápidos</h5>
-                    <ul class="link-list">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="about.html">Sobre Nosotros</a></li>
-                        <li><a href="services.html">Servicios Logísticos</a></li>
-                        <li><a href="portfolio.html">Portafolio</a></li>
-                        <li><a href="contact.html">Contacto Directo</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="widget">
-                    <h5 class="widgetheading">Especialidades</h5>
-                    <ul class="link-list">
-                        <li><a href="#">Estibaje de Barcazas</a></li>
-                        <li><a href="#">Operación de Volcadoras</a></li>
-                        <li><a href="#">Descarga a Tolvas</a></li>
-                        <li><a href="#">Calado de Granos</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="widget">
-                    <h5 class="widgetheading">Mantenimiento</h5>
-                    <ul class="link-list">
-                        <li><a href="#">Limpieza de Túneles Industriales</a></li>
-                        <li><a href="#">Mantenimiento de Áreas Verdes</a></li>
-                        <li><a href="#">Pintura y Albañilería de Puertos</a></li>
-                    </ul>
-                </div>
-            </div>
+      </div>
+
+      <div class="service-card">
+        <img src="img/service6.jpg" alt="Servicios Generales">
+        <div class="service-card-body">
+          <h3>Servicios Generales</h3>
+          <p>Soluciones de limpieza técnica, mantenimiento estructural y obras complementarias de infraestructura:</p>
+          <ul>
+            <li><strong>Limpieza de Áreas Verdes:</strong> Puesta a punto de predios exteriores y perímetros comerciales.</li>
+            <li><strong>Limpieza de Túneles:</strong> Despeje e higienización de túneles industriales y espacios confinados.</li>
+            <li><strong>Sanitarios y Oficinas:</strong> Desinfección profunda de áreas comunes, comedores y oficinas de plantas.</li>
+            <li><strong>Pinturas en General:</strong> Aplicación de recubrimientos protectores en interiores y exteriores.</li>
+            <li><strong>Albañilería y Plomería:</strong> Mantenimiento edilicio técnico para reparaciones civiles urgentes.</li>
+          </ul>
         </div>
+      </div>
+
     </div>
-    <div id="sub-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="copyright">
-                        <p>
-                            <span>&copy; 2026 HO Estibajes y Marítimos S.R.L. Todos los derechos reservados.</span>
-                        </p>                        
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <ul class="social-network">
-                        <li><a href="https://www.facebook.com/ho.estibajes/?_rdr" target="_blank" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                    </ul>   
-                </div>
-            </div>
+
+    <hr class="separator">
+
+    <div class="info-grid">
+      
+      <div class="info-block-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
+        <div class="info-text">
+          <h3>Seguridad Industrial</h3>
+          <p>Todo nuestro personal opera bajo estrictos protocolos de prevención de riesgos y con Equipos de Protección Individual (EPI) homologados.</p>
+        </div>
+      </div>
+
+      <div class="info-block-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="info-text">
+          <h3>Disponibilidad 24/7</h3>
+          <p>Nos adaptamos con flexibilidad absoluta a las ventanas operativas y los turnos logísticos continuos de las terminales fluviales.</p>
+        </div>
+      </div>
+
+      <div class="info-block-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="info-text">
+          <h3>Experiencia Fluvial</h3>
+          <p>Especialistas capacitados en el adrizaje, control de calado e hidrodinámica de convoyes de barcazas sobre la Hidrovía Paraguay-Paraná.</p>
+        </div>
+      </div>
+
+      <div class="info-block-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="info-text">
+          <h3>Cero Mermas</h3>
+          <p>Minimizamos las pérdidas físicas de productos agrícolas y subproductos graneleros mediante descargas milimétricas a tolva.</p>
+        </div>
+      </div>
+
+      <div class="info-block-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="info-text">
+          <h3>Ubicación Estratégica</h3>
+          <p>Operamos de forma permanente desde San Antonio, Central, la zona neurálgica de mayor conectividad industrial y portuaria del país.</p>
+        </div>
+      </div>
+
+      <div class="info-block-item">
+        <div class="info-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="info-text">
+          <h3>Mano de Obra Calificada</h3>
+          <p>Personal seleccionado bajo un riguroso esquema corporativo y entrenado periódicamente en operaciones mecánicas pesadas.</p>
+        </div>
+      </div>
+
     </div>
-    </footer>
-</div>
-<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript -->
-<script src="js/jquery.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script> 
-<script src="js/portfolio/jquery.quicksand.js"></script>
-<script src="js/portfolio/setting.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/animate.js"></script>
-<script src="js/custom.js"></script>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes">
+      <p>Empresa especializada en estibaje marítimo, estibaje de camiones y logística industrial en Paraguay.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/ho.estibajes/" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Navegación</h5>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre Nosotros</a></li>
+        <li><a href="services.html">Servicios</a></li>
+        <li><a href="portfolio.html">Portafolio</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Servicios</h5>
+      <ul>
+        <li><a href="services.html">Estibaje Marítimo</a></li>
+        <li><a href="services.html">Estibaje de Camiones</a></li>
+        <li><a href="services.html">Limpieza Industrial</a></li>
+        <li><a href="services.html">Mantenimiento</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 HO Estibajes y Marítimos S.R.L. Todos los derechos reservados.</p>
+    <p>San Antonio, Paraguay</p>
+  </div>
+</footer>
+
+<script>
+// Lógica del menú desplegable para smartphones
+const toggle = document.getElementById('navToggle');
+const mobile = document.getElementById('navMobile');
+toggle.addEventListener('click', () => mobile.classList.toggle('open'));
+</script>
 </body>
 </html>
