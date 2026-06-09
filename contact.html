@@ -68,17 +68,19 @@
       
       <section id="content">
         <div class="container">
-          <div class="row">
-            <div class="col-md-6">
+          <div class="row" style="display: flex; flex-wrap: wrap;">
+            
+            <!-- COLUMNA 1: FORMULARIO DE DATOS -->
+            <div class="col-md-6" style="margin-bottom: 30px;">
               <p>
-                Estamos aquí para ayudarte. Si tienes alguna pregunta, inquietud o requieres un presupuesto personalizado para operaciones de estibaje o asistencia marítima, no dudes en comunicarte con nosotros. Estaremos encantados de asistirte.
+                Estamos aquí para ayudarte. Si tienes alguna pregunta, inquietud o requieres un presupuesto personalizado para operaciones de estibaje o asistencia marítima, no dudes en comunicarte con nosotros.
               </p>
               
               <div class="alert alert-success hidden" id="contactSuccess">
                 <strong>¡Éxito!</strong> Tu mensaje ha sido enviado correctamente.
               </div>
               <div class="alert alert-error hidden" id="contactError">
-                <strong>¡Error!</strong> Ha ocurrido un error al enviar tu mensaje.
+                <strong>¡Error!</strong> Ha ocurrido un error al enviar tu mensaje o el código de verificación es incorrecto.
               </div>
               
               <div class="contact-form">
@@ -91,6 +93,7 @@
                       id="name"
                       name="name"
                       placeholder="Ingresa tu nombre"
+                      required
                     />
                     <i class="fa fa-user form-control-feedback"></i>
                   </div>
@@ -102,8 +105,21 @@
                       id="email"
                       name="email"
                       placeholder="Ingresa tu correo electrónico"
+                      required
                     />
                     <i class="fa fa-envelope form-control-feedback"></i>
+                  </div>
+                  <div class="form-group has-feedback">
+                    <label for="phone">Teléfono / WhatsApp*</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phone"
+                      name="phone"
+                      placeholder="Ej: +595 981 123456"
+                      required
+                    />
+                    <i class="fa fa-phone form-control-feedback"></i>
                   </div>
                   <div class="form-group has-feedback">
                     <label for="subject">Asunto*</label>
@@ -113,6 +129,7 @@
                       id="subject"
                       name="subject"
                       placeholder="Ingresa el asunto de la consulta"
+                      required
                     />
                     <i class="fa fa-navicon form-control-feedback"></i>
                   </div>
@@ -120,31 +137,55 @@
                     <label for="message">Mensaje*</label>
                     <textarea
                       class="form-control"
-                      rows="6"
+                      rows="4"
                       id="message"
                       name="message"
                       placeholder="Escribe detalladamente tu mensaje aquí"
+                      required
                     ></textarea>
                     <i class="fa fa-pencil form-control-feedback"></i>
                   </div>
 
-                  <input type="submit" value="Enviar Mensaje" class="btn btn-default" />
+                  <!-- Campo de Verificación Anti-Robot -->
+                  <div class="form-group style-captcha" style="margin-bottom: 20px;">
+                    <label for="captcha-input">Verificación de seguridad*</label>
+                    <div class="row">
+                      <div class="col-xs-5 col-sm-4">
+                        <span id="captcha-question" class="form-control text-center" style="background: #f1f1f1; font-weight: bold; letter-spacing: 2px; font-size: 16px; user-select: none; padding: 6px 0;"></span>
+                      </div>
+                      <div class="col-xs-7 col-sm-8">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="captcha-input"
+                          placeholder="Resuelve la suma"
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Botón Enviar Compacto -->
+                  <input type="submit" value="Enviar Mensaje" class="btn btn-default" style="min-width: 160px; padding: 10px 24px;" />
                 </form>
               </div>
             </div>
             
-            <div class="col-md-6">
-              <!-- Mapa interactivo de ubicación real de la empresa -->
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.35920403252!2d-57.55281992534321!3d-25.426251832742093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945dad25496730d9%3A0xa535891df267b8fb!2sH.O.%20Estibajes%20y%20Mar%C3%ADtimos%20S.R.L.!5e0!3m2!1ses!2spy!4v1729819582852!5m2!1ses!2spy"
-                width="100%"
-                height="520"
-                style="border: 0; min-height: 450px;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
+            <!-- COLUMNA 2: GOOGLE MAP (PROPORCIONAL) -->
+            <div class="col-md-6" style="margin-bottom: 30px; display: flex; flex-direction: column;">
+              <div style="flex: 1; min-height: 480px; width: 100%;">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.35920403252!2d-57.55281992534321!3d-25.426251832742093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945dad25496730d9%3A0xa535891df267b8fb!2sH.O.%20Estibajes%20y%20Mar%C3%ADtimos%20S.R.L.!5e0!3m2!1ses!2spy!4v1729819582852!5m2!1ses!2spy"
+                  width="100%"
+                  height="100%"
+                  style="border: 0; border-radius: 4px; min-height: 480px;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -221,7 +262,7 @@
                       title="Facebook"
                       ><i class="fa fa-facebook"></i
                     ></a>
-                  </td>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -244,5 +285,31 @@
     <script src="js/animate.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/validate.js"></script>
+
+    <!-- Script de lógica Anti-Robot (Captcha Matemático) -->
+    <script>
+      $(document).ready(function() {
+        // Generar números aleatorios para la validación
+        var num1 = Math.floor(Math.random() * 9) + 1;
+        var num2 = Math.floor(Math.random() * 9) + 1;
+        var correctAnswer = num1 + num2;
+
+        // Escribir el problema en el formulario
+        $('#captcha-question').text(num1 + ' + ' + num2 + ' =');
+
+        // Validar antes de procesar el submit
+        $('#contact-form').on('submit', function(e) {
+          var userAnswer = parseInt($('#captcha-input').val(), 10);
+
+          if (userAnswer !== correctAnswer) {
+            e.preventDefault(); // Bloquear envío de datos
+            $('#contactError').removeClass('hidden').fadeIn();
+            $('#contactSuccess').addClass('hidden');
+            $('#captcha-input').css('border-color', '#a94442').val('');
+            alert('Por favor, verifique el código matemático anti-robot.');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
