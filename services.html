@@ -9,133 +9,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-:root{
-  --navy:#0B1F3A;
-  --navy-mid:#122847;
-  --navy-light:#1A3A5C;
-  --steel:#2E6DA4;
-  --steel-light:#4A8FC0;
-  --amber:#E8A020;
-  --amber-dark:#C48318;
-  --off-white:#F5F3EE;
-  --gray-100:#ECEAE5;
-  --gray-300:#B8B5AE;
-  --gray-500:#7A7770;
-  --gray-800:#2C2A27;
-  --white:#FFFFFF;
-  --font-display:'Barlow Condensed',sans-serif;
-  --font-body:'Inter',sans-serif;
-  --radius:6px;
-  --radius-lg:12px;
-  --shadow-card:0 2px 16px rgba(11,31,58,0.10);
-}
-
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);color:var(--gray-800);background:var(--white);line-height:1.65;font-size:16px}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:2px solid var(--steel)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{display:flex;align-items:center;gap:0.75rem}
-.nav-logo img{height:40px;width:auto}
-.nav-logo span{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--white);letter-spacing:0.03em;line-height:1.2}
-.nav-links{display:flex;gap:0.25rem;list-style:none}
-.nav-links a{display:block;padding:0.4rem 0.85rem;color:rgba(255,255,255,0.8);font-size:0.88rem;font-weight:500;border-radius:var(--radius);transition:background 0.18s,color 0.18s}
-.nav-links a:hover,.nav-links a.active{background:var(--steel);color:var(--white)}
-.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;color:var(--white)}
-.nav-toggle svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
-.nav-mobile{display:none;background:var(--navy-mid);padding:1rem 1.5rem;list-style:none;gap:0.25rem;flex-direction:column}
-.nav-mobile a{display:block;padding:0.65rem 0.85rem;color:rgba(255,255,255,0.85);font-size:0.95rem;font-weight:500;border-radius:var(--radius);transition:background 0.18s}
-.nav-mobile a:hover{background:var(--steel);color:var(--white)}
-.nav-mobile.open{display:flex}
-
-/* INNER HEADLINE */
-.inner-headline{background:var(--navy);padding:3.5rem 1.5rem;border-bottom:4px solid var(--amber)}
-.inner-headline-inner{max-width:1100px;margin:0 auto}
-.inner-headline h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:var(--white);letter-spacing:0.02em}
-
-/* SECTION SHARED */
-.section{padding:4.5rem 1.5rem}
-.section-inner{max-width:1100px;margin:0 auto}
-.section-label{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel);margin-bottom:0.6rem}
-.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:1rem}
-.section-sub{color:var(--gray-500);font-size:1rem;max-width:580px;line-height:1.7;margin-bottom:3rem}
-
-/* SERVICES CARDS BLOCKS */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem}
-.service-card{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-100);background:var(--white);box-shadow:var(--shadow-card);transition:transform 0.22s,box-shadow 0.22s}
-.service-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(11,31,58,0.15)}
-.service-card img{width:100%;height:230px;object-fit:cover}
-.service-card-body{padding:1.75rem}
-.service-card h3{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--navy);margin-bottom:0.8rem;border-bottom:2px solid var(--gray-100);padding-bottom:0.5rem}
-.service-card p{font-size:0.95rem;color:var(--gray-800);margin-bottom:1.25rem}
-.service-card ul{list-style:none}
-.service-card ul li{font-size:0.9rem;color:var(--gray-800);padding:0.4rem 0;padding-left:1.2rem;position:relative;line-height:1.6}
-.service-card ul li::before{content:'';position:absolute;left:0;top:0.75rem;width:6px;height:6px;border-radius:50%;background:var(--steel)}
-
-/* SEPARATOR LINE */
-.separator{border:none;border-top:1px solid var(--gray-100);margin:4.5rem 0}
-
-/* INFO BLOCKS (INFERIOR) */
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem 2rem}
-.info-block-item{display:flex;gap:1.25rem;align-items:flex-start}
-.info-icon{width:46px;height:46px;background:var(--navy);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.info-icon svg{width:22px;height:22px;stroke:var(--amber);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.info-text h3{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem}
-.info-text p{font-size:0.92rem;color:var(--gray-500);line-height:1.6}
-
-/* FOOTER */
-footer{background:var(--navy);padding:3rem 1.5rem 0}
-.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
-.footer-brand img{height:48px;margin-bottom:0.75rem}
-.footer-brand p{color:rgba(255,255,255,0.6);font-size:0.875rem;line-height:1.7;max-width:280px;margin-bottom:1rem}
-.footer-social{display:flex;gap:0.5rem}
-.footer-social a{width:36px;height:36px;border-radius:var(--radius);background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);transition:background 0.18s,color 0.18s}
-.footer-social a:hover{background:var(--steel);color:var(--white)}
-.footer-social svg{width:16px;height:16px;fill:currentColor}
-.footer-col h5{font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
-.footer-col ul a{font-size:0.875rem;color:rgba(255,255,255,0.65);transition:color 0.18s}
-.footer-col ul a:hover{color:var(--white)}
-.footer-bottom{max-width:1100px;margin:0 auto;padding:1.25rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
-.footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.4)}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .footer-inner{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;text-align:center}
-}
-@media(max-width:640px){
-  .nav-links{display:none}
-  .nav-toggle{display:block}
-  .section{padding:3rem 1.25rem}
-  .services-grid{grid-template-columns:1fr}
-  .info-grid{grid-template-columns:1fr}
-}
-</style>
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes">
+      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes y Marítimos" width="40" height="40">
       <span>HO Estibajes<br>y Marítimos</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="about.html">Sobre Nosotros</a></li>
-      <li><a href="services.html" class="active">Servicios</a></li>
+      <li><a href="services.html">Servicios</a></li>
       <li><a href="portfolio.html">Portafolio</a></li>
       <li><a href="pricing.html">Precios</a></li>
       <li><a href="contact.html">Contacto</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
       <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
@@ -149,23 +41,26 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
   </ul>
 </nav>
 
-<section class="inner-headline">
-  <div class="inner-headline-inner">
-    <h2>Servicios</h2>
+<section class="inner-hero">
+  <div class="inner-hero-inner">
+    <h1>Servicios</h1>
+    <div class="breadcrumb"><a href="index.html">Inicio</a> <span>/</span> <span>Servicios</span></div>
   </div>
 </section>
 
 <section class="section">
   <div class="section-inner">
-    
-    <span class="section-label">Excelencia logística</span>
-    <h2 class="section-title">Nuestras Soluciones Integrales</h2>
-    <p class="section-sub">Brindamos soporte estratégico, técnico y operativo adaptado a las demandas del sector portuario, industrial y comercial en Paraguay.</p>
 
-    <div class="services-grid">
+    <div class="section-head animate" data-anim="fade-up">
+      <span class="section-label">Excelencia logística</span>
+      <h2 class="section-title">Nuestras Soluciones Integrales</h2>
+      <p class="section-sub">Brindamos soporte estratégico, técnico y operativo adaptado a las demandas del sector portuario, industrial y comercial en Paraguay.</p>
+    </div>
 
-      <div class="service-card">
-        <img src="img/service4.jpg" alt="Servicios Marítimos">
+    <div class="services-grid-detailed">
+
+      <div class="service-card-detailed animate" data-anim="fade-up">
+        <img src="img/service4.jpg" alt="Servicios marítimos de estibaje portuario" loading="lazy" width="400" height="230">
         <div class="service-card-body">
           <h3>Servicios Marítimos</h3>
           <p>Ofrecemos un servicio integral para barcazas graneleras enfocado en la seguridad operativa:</p>
@@ -179,8 +74,8 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
         </div>
       </div>
 
-      <div class="service-card">
-        <img src="img/service5.jpg" alt="Estibaje de Camiones">
+      <div class="service-card-detailed animate" data-anim="fade-up">
+        <img src="img/service5.jpg" alt="Estibaje de camiones a tolva" loading="lazy" width="400" height="230">
         <div class="service-card-body">
           <h3>Estibaje de Camiones</h3>
           <p>Manejo logístico completo de productos a granel, contenedores y mercaderías generales:</p>
@@ -194,8 +89,8 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
         </div>
       </div>
 
-      <div class="service-card">
-        <img src="img/service6.jpg" alt="Servicios Generales">
+      <div class="service-card-detailed animate" data-anim="fade-up">
+        <img src="img/service6.jpg" alt="Servicios generales de limpieza y mantenimiento industrial" loading="lazy" width="400" height="230">
         <div class="service-card-body">
           <h3>Servicios Generales</h3>
           <p>Soluciones de limpieza técnica, mantenimiento estructural y obras complementarias de infraestructura:</p>
@@ -214,8 +109,7 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
     <hr class="separator">
 
     <div class="info-grid">
-      
-      <div class="info-block-item">
+      <div class="info-block-item animate" data-anim="fade-up">
         <div class="info-icon">
           <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
@@ -224,8 +118,7 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
           <p>Todo nuestro personal opera bajo estrictos protocolos de prevención de riesgos y con Equipos de Protección Individual (EPI) homologados.</p>
         </div>
       </div>
-
-      <div class="info-block-item">
+      <div class="info-block-item animate" data-anim="fade-up">
         <div class="info-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
@@ -234,8 +127,7 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
           <p>Nos adaptamos con flexibilidad absoluta a las ventanas operativas y los turnos logísticos continuos de las terminales fluviales.</p>
         </div>
       </div>
-
-      <div class="info-block-item">
+      <div class="info-block-item animate" data-anim="fade-up">
         <div class="info-icon">
           <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="3"/></svg>
         </div>
@@ -244,8 +136,7 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
           <p>Especialistas capacitados en el adrizaje, control de calado e hidrodinámica de convoyes de barcazas sobre la Hidrovía Paraguay-Paraná.</p>
         </div>
       </div>
-
-      <div class="info-block-item">
+      <div class="info-block-item animate" data-anim="fade-up">
         <div class="info-icon">
           <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
         </div>
@@ -254,8 +145,7 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
           <p>Minimizamos las pérdidas físicas de productos agrícolas y subproductos graneleros mediante descargas milimétricas a tolva.</p>
         </div>
       </div>
-
-      <div class="info-block-item">
+      <div class="info-block-item animate" data-anim="fade-up">
         <div class="info-icon">
           <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
@@ -264,8 +154,7 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
           <p>Operamos de forma permanente desde San Antonio, Central, la zona neurálgica de mayor conectividad industrial y portuaria del país.</p>
         </div>
       </div>
-
-      <div class="info-block-item">
+      <div class="info-block-item animate" data-anim="fade-up">
         <div class="info-icon">
           <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
@@ -274,7 +163,6 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
           <p>Personal seleccionado bajo un riguroso esquema corporativo y entrenado periódicamente en operaciones mecánicas pesadas.</p>
         </div>
       </div>
-
     </div>
 
   </div>
@@ -283,7 +171,7 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes">
+      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes" width="48" height="48">
       <p>Empresa especializada en estibaje marítimo, estibaje de camiones y logística industrial en Paraguay.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/ho.estibajes/" target="_blank" aria-label="Facebook">
@@ -310,18 +198,30 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
         <li><a href="services.html">Mantenimiento</a></li>
       </ul>
     </div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="https://wa.me/595981142055" target="_blank">+595 981 142055</a></li>
+        <li><a href="mailto:ho.estibajes@gmail.com">ho.estibajes@gmail.com</a></li>
+        <li><span style="color:rgba(255,255,255,0.55);font-size:0.875rem">San Antonio, Paraguay</span></li>
+      </ul>
+    </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 HO Estibajes y Marítimos S.R.L. Todos los derechos reservados.</p>
+    <p>&copy; 2026 HO Estibajes y Marítimos S.R.L. Todos los derechos reservados.</p>
     <p>San Antonio, Paraguay</p>
   </div>
 </footer>
 
-<script>
-// Lógica del menú desplegable para smartphones
-const toggle = document.getElementById('navToggle');
-const mobile = document.getElementById('navMobile');
-toggle.addEventListener('click', () => mobile.classList.toggle('open'));
-</script>
+<a class="whatsapp-float" href="https://wa.me/595981142055" target="_blank" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.536 3.66 1.458 5.175L2 22l4.825-1.458A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+  <span class="whatsapp-tooltip">Escríbanos</span>
+</a>
+
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="js/main.js"></script>
 </body>
 </html>

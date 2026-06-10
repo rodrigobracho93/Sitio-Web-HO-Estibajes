@@ -2,207 +2,32 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>HO Estibajes y Marítimos S.R.L.</title>
+<title>HO Estibajes y Marítimos S.R.L. — Estibaje, Logística y Servicios Portuarios</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="HO Estibajes y Marítimos S.R.L. ofrece servicios integrales de estibaje marítimo, camiones y logística en San Antonio, Paraguay. Más de 10 años de experiencia.">
 <link rel="icon" href="img/logoHO.ico" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-:root{
-  --navy:#0B1F3A;
-  --navy-mid:#122847;
-  --navy-light:#1A3A5C;
-  --steel:#2E6DA4;
-  --steel-light:#4A8FC0;
-  --amber:#E8A020;
-  --amber-dark:#C48318;
-  --off-white:#F5F3EE;
-  --gray-100:#ECEAE5;
-  --gray-300:#B8B5AE;
-  --gray-500:#7A7770;
-  --gray-800:#2C2A27;
-  --white:#FFFFFF;
-  --font-display:'Barlow Condensed',sans-serif;
-  --font-body:'Inter',sans-serif;
-  --radius:6px;
-  --radius-lg:12px;
-  --shadow-card:0 2px 16px rgba(11,31,58,0.10);
-}
-
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);color:var(--gray-800);background:var(--white);line-height:1.65;font-size:16px}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:2px solid var(--steel)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{display:flex;align-items:center;gap:0.75rem}
-.nav-logo img{height:40px;width:auto}
-.nav-logo span{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--white);letter-spacing:0.03em;line-height:1.2}
-.nav-links{display:flex;gap:0.25rem;list-style:none}
-.nav-links a{display:block;padding:0.4rem 0.85rem;color:rgba(255,255,255,0.8);font-size:0.88rem;font-weight:500;border-radius:var(--radius);transition:background 0.18s,color 0.18s}
-.nav-links a:hover,.nav-links a.active{background:var(--steel);color:var(--white)}
-.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;color:var(--white)}
-.nav-toggle svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
-.nav-mobile{display:none;background:var(--navy-mid);padding:1rem 1.5rem;list-style:none;gap:0.25rem;flex-direction:column}
-.nav-mobile a{display:block;padding:0.65rem 0.85rem;color:rgba(255,255,255,0.85);font-size:0.95rem;font-weight:500;border-radius:var(--radius);transition:background 0.18s}
-.nav-mobile a:hover{background:var(--steel);color:var(--white)}
-.nav-mobile.open{display:flex}
-
-/* HERO */
-.hero{background:var(--navy);position:relative;overflow:hidden;min-height:520px;display:flex;align-items:center}
-.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,31,58,0.96) 45%,rgba(46,109,164,0.55) 100%);z-index:1}
-.hero-bg{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;opacity:0.28}
-.hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:4rem 1.5rem 3.5rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
-.hero-badge{display:inline-block;background:var(--amber);color:var(--navy);font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.75rem;border-radius:var(--radius);margin-bottom:1rem}
-.hero h1{font-family:var(--font-display);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;color:var(--white);line-height:1.05;margin-bottom:1.25rem;letter-spacing:0.01em}
-.hero h1 em{color:var(--amber);font-style:normal}
-.hero p{color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:520px;margin-bottom:2rem;line-height:1.7}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-primary{background:var(--amber);color:var(--navy);font-weight:600;font-size:0.92rem;padding:0.75rem 1.6rem;border-radius:var(--radius);border:none;cursor:pointer;transition:background 0.18s,transform 0.15s;display:inline-block}
-.btn-primary:hover{background:var(--amber-dark);transform:translateY(-1px)}
-.btn-outline{background:transparent;color:var(--white);font-weight:600;font-size:0.92rem;padding:0.73rem 1.6rem;border-radius:var(--radius);border:2px solid rgba(255,255,255,0.4);cursor:pointer;transition:border-color 0.18s,background 0.18s;display:inline-block}
-.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,0.1)}
-.hero-stat-block{display:flex;flex-direction:column;gap:1.25rem}
-.hero-stat{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius-lg);padding:1.1rem 1.4rem;text-align:center;min-width:130px}
-.hero-stat strong{display:block;font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:var(--amber);line-height:1}
-.hero-stat span{font-size:0.78rem;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:0.07em;margin-top:0.3rem;display:block}
-
-/* SECTION SHARED */
-.section{padding:4.5rem 1.5rem}
-.section-inner{max-width:1100px;margin:0 auto}
-.section-label{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel);margin-bottom:0.6rem}
-.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:1rem}
-.section-sub{color:var(--gray-500);font-size:1rem;max-width:580px;line-height:1.7}
-.section-head{margin-bottom:3rem}
-
-/* SERVICES */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.75rem}
-.service-card{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-100);background:var(--white);box-shadow:var(--shadow-card);transition:transform 0.22s,box-shadow 0.22s}
-.service-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(11,31,58,0.15)}
-.service-card img{width:100%;height:210px;object-fit:cover}
-.service-card-body{padding:1.4rem 1.5rem 1.6rem}
-.service-icon{width:42px;height:42px;background:var(--navy);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin-bottom:0.9rem}
-.service-icon svg{width:22px;height:22px;stroke:var(--amber);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.service-card h3{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--navy);margin-bottom:0.6rem}
-.service-card p{font-size:0.9rem;color:var(--gray-500);margin-bottom:1rem;line-height:1.6}
-.service-card ul{list-style:none;margin-bottom:1.25rem}
-.service-card ul li{font-size:0.875rem;color:var(--gray-800);padding:0.3rem 0;padding-left:1.1rem;position:relative;line-height:1.55}
-.service-card ul li::before{content:'';position:absolute;left:0;top:0.62rem;width:6px;height:6px;border-radius:50%;background:var(--steel)}
-.btn-sm{display:inline-block;font-size:0.82rem;font-weight:600;color:var(--steel);padding:0.45rem 1rem;border:1.5px solid var(--steel);border-radius:var(--radius);transition:background 0.18s,color 0.18s}
-.btn-sm:hover{background:var(--steel);color:var(--white)}
-
-/* ABOUT STRIP */
-.about-strip{background:var(--navy);padding:4rem 1.5rem}
-.about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:3.5rem;align-items:center}
-.about-img-wrap{position:relative;flex-shrink:0}
-.about-img-wrap img{width:320px;height:360px;object-fit:cover;border-radius:var(--radius-lg);border:3px solid var(--steel)}
-.about-badge-overlay{position:absolute;bottom:-18px;right:-18px;background:var(--amber);border-radius:var(--radius-lg);padding:1rem 1.25rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
-.about-badge-overlay strong{display:block;font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:var(--navy);line-height:1}
-.about-badge-overlay span{font-size:0.72rem;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:0.08em}
-.about-content .section-label{color:var(--amber)}
-.about-content .section-title{color:var(--white)}
-.about-content p{color:rgba(255,255,255,0.75);font-size:0.95rem;line-height:1.75;margin-bottom:1.25rem}
-.about-checks{list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-top:1.5rem}
-.about-checks li{display:flex;align-items:flex-start;gap:0.7rem;color:rgba(255,255,255,0.85);font-size:0.9rem}
-.check-dot{width:20px;height:20px;background:var(--steel);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.check-dot svg{width:11px;height:11px;stroke:var(--white);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-
-/* WHY US */
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2.5rem}
-.why-card{padding:1.5rem;border-radius:var(--radius-lg);border:1px solid var(--gray-100);background:var(--off-white);display:flex;flex-direction:column;gap:0.75rem}
-.why-num{font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--gray-100);line-height:1;margin-bottom:-0.5rem}
-.why-card h4{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--navy)}
-.why-card p{font-size:0.875rem;color:var(--gray-500);line-height:1.6}
-
-/* TESTIMONIALS */
-.testimonials{background:var(--off-white);padding:4rem 1.5rem}
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2.5rem}
-.testi-card{background:var(--white);border-radius:var(--radius-lg);padding:1.75rem;border:1px solid var(--gray-100);box-shadow:var(--shadow-card)}
-.testi-stars{display:flex;gap:3px;margin-bottom:0.9rem}
-.testi-stars svg{width:16px;height:16px;fill:var(--amber);stroke:none}
-.testi-card p{font-size:0.93rem;color:var(--gray-800);line-height:1.7;margin-bottom:1.2rem;font-style:italic}
-.testi-author{font-size:0.82rem;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:0.07em}
-
-/* CONTACT STRIP */
-.contact-strip{background:var(--steel);padding:3.5rem 1.5rem}
-.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
-.contact-strip h2{font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--white);margin-bottom:0.5rem}
-.contact-strip p{color:rgba(255,255,255,0.82);font-size:0.95rem}
-.contact-details{display:flex;flex-direction:column;gap:0.75rem;align-items:flex-end}
-.contact-detail-item{display:flex;align-items:center;gap:0.6rem;color:var(--white);font-size:0.9rem}
-.contact-detail-item svg{width:18px;height:18px;stroke:var(--amber);fill:none;stroke-width:1.8;stroke-linecap:round}
-
-/* FOOTER */
-footer{background:var(--navy);padding:3rem 1.5rem 0}
-.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
-.footer-brand img{height:48px;margin-bottom:0.75rem}
-.footer-brand p{color:rgba(255,255,255,0.6);font-size:0.875rem;line-height:1.7;max-width:280px;margin-bottom:1rem}
-.footer-social{display:flex;gap:0.5rem}
-.footer-social a{width:36px;height:36px;border-radius:var(--radius);background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);transition:background 0.18s,color 0.18s}
-.footer-social a:hover{background:var(--steel);color:var(--white)}
-.footer-social svg{width:16px;height:16px;fill:currentColor}
-.footer-col h5{font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
-.footer-col ul a{font-size:0.875rem;color:rgba(255,255,255,0.65);transition:color 0.18s}
-.footer-col ul a:hover{color:var(--white)}
-.footer-bottom{max-width:1100px;margin:0 auto;padding:1.25rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
-.footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.4)}
-
-/* MOBILE */
-@media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr}
-  .hero-stat-block{flex-direction:row;flex-wrap:wrap;gap:0.75rem}
-  .hero-stat{min-width:unset;flex:1;min-width:110px}
-  .about-inner{grid-template-columns:1fr}
-  .about-img-wrap img{width:100%;height:260px}
-  .about-badge-overlay{right:1rem;bottom:-14px}
-  .contact-inner{grid-template-columns:1fr}
-  .contact-details{align-items:flex-start}
-  .footer-inner{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;text-align:center}
-}
-@media(max-width:640px){
-  .nav-links{display:none}
-  .nav-toggle{display:block}
-  .section{padding:3rem 1.25rem}
-  .hero{min-height:auto}
-  .hero-inner{padding:3rem 1.25rem 2.5rem}
-  .hero h1{font-size:2.2rem}
-  .hero-actions{flex-direction:column;align-items:flex-start}
-  .btn-primary,.btn-outline{width:100%;text-align:center}
-  .services-grid{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr 1fr}
-  .testi-grid{grid-template-columns:1fr}
-  .about-img-wrap img{height:220px}
-}
-@media(max-width:400px){
-  .why-grid{grid-template-columns:1fr}
-}
-</style>
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes">
+      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes y Marítimos" width="40" height="40">
       <span>HO Estibajes<br>y Marítimos</span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="index.html">Inicio</a></li>
       <li><a href="about.html">Sobre Nosotros</a></li>
       <li><a href="services.html">Servicios</a></li>
       <li><a href="portfolio.html">Portafolio</a></li>
       <li><a href="pricing.html">Precios</a></li>
       <li><a href="contact.html">Contacto</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
       <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
@@ -216,11 +41,10 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <img class="hero-bg" src="img/slides/4.jpg" alt="">
+  <img class="hero-bg" src="img/slides/4.jpg" alt="Operación portuaria HO Estibajes" loading="lazy">
   <div class="hero-inner">
-    <div>
+    <div class="animate" data-anim="fade-up">
       <span class="hero-badge">San Antonio, Paraguay</span>
       <h1>Estibaje<br>y Logística<br><em>Marítima</em></h1>
       <p>Más de 10 años operando en puertos e instalaciones terrestres con eficiencia, seguridad y compromiso en cada carga.</p>
@@ -230,15 +54,15 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
       </div>
     </div>
     <div class="hero-stat-block">
-      <div class="hero-stat">
+      <div class="hero-stat animate" data-anim="fade-up">
         <strong>10+</strong>
         <span>Años de experiencia</span>
       </div>
-      <div class="hero-stat">
+      <div class="hero-stat animate" data-anim="fade-up">
         <strong>3</strong>
         <span>Líneas de servicio</span>
       </div>
-      <div class="hero-stat">
+      <div class="hero-stat animate" data-anim="fade-up">
         <strong>100%</strong>
         <span>Compromiso</span>
       </div>
@@ -246,18 +70,17 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="section">
   <div class="section-inner">
-    <div class="section-head">
+    <div class="section-head animate" data-anim="fade-up">
       <span class="section-label">Lo que hacemos</span>
       <h2 class="section-title">Nuestros Servicios</h2>
       <p class="section-sub">Soluciones integrales y personalizadas para el sector logístico e industrial en Paraguay.</p>
     </div>
     <div class="services-grid">
 
-      <div class="service-card">
-        <img src="img/service4.jpg" alt="Servicios Marítimos">
+      <div class="service-card animate" data-anim="fade-up">
+        <img src="img/service4.jpg" alt="Servicios marítimos de estibaje portuario" loading="lazy" width="400" height="210">
         <div class="service-card-body">
           <div class="service-icon">
             <svg viewBox="0 0 24 24"><path d="M3 17h18M12 3v8m-6 2l6-8 6 8"/><rect x="2" y="17" width="20" height="4" rx="1"/></svg>
@@ -273,8 +96,8 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
         </div>
       </div>
 
-      <div class="service-card">
-        <img src="img/service5.jpg" alt="Estibaje de Camiones">
+      <div class="service-card animate" data-anim="fade-up">
+        <img src="img/service5.jpg" alt="Estibaje de camiones a tolva" loading="lazy" width="400" height="210">
         <div class="service-card-body">
           <div class="service-icon">
             <svg viewBox="0 0 24 24"><rect x="1" y="8" width="15" height="13" rx="1"/><path d="M16 11h4l3 3v5h-7V11z"/><circle cx="5.5" cy="21" r="1.5"/><circle cx="18.5" cy="21" r="1.5"/></svg>
@@ -290,8 +113,8 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
         </div>
       </div>
 
-      <div class="service-card">
-        <img src="img/service6.jpg" alt="Servicios Generales">
+      <div class="service-card animate" data-anim="fade-up">
+        <img src="img/service6.jpg" alt="Servicios generales de limpieza y mantenimiento industrial" loading="lazy" width="400" height="210">
         <div class="service-card-body">
           <div class="service-icon">
             <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -311,17 +134,16 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about-strip">
   <div class="about-inner">
-    <div class="about-img-wrap">
-      <img src="img/people1.jpg" alt="Equipo HO Estibajes">
+    <div class="about-img-wrap animate" data-anim="slide-left">
+      <img src="img/people1.jpg" alt="Equipo de trabajo de HO Estibajes" loading="lazy" width="320" height="360">
       <div class="about-badge-overlay">
         <strong>10+</strong>
         <span>Años en el<br>sector</span>
       </div>
     </div>
-    <div class="about-content">
+    <div class="about-content animate" data-anim="slide-right">
       <span class="section-label">Quiénes somos</span>
       <h2 class="section-title">Experiencia que marca la diferencia</h2>
       <p>HO Estibajes y Marítimos S.R.L. es una empresa con más de 10 años de trayectoria en el sector industrial, especializada en estibaje marítimo, estibaje de camiones y una amplia gama de servicios logísticos.</p>
@@ -344,31 +166,30 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
   </div>
 </section>
 
-<!-- WHY US -->
 <section class="section">
   <div class="section-inner">
-    <div class="section-head">
+    <div class="section-head animate" data-anim="fade-up">
       <span class="section-label">Nuestra propuesta</span>
       <h2 class="section-title">¿Por qué elegirnos?</h2>
       <p class="section-sub">Confiar en nosotros es contar con un equipo dedicado a superar expectativas y mantener su operación siempre en marcha.</p>
     </div>
     <div class="why-grid">
-      <div class="why-card">
+      <div class="why-card animate" data-anim="fade-up">
         <div class="why-num">01</div>
         <h4>Experiencia Comprobada</h4>
         <p>Más de una década operando en el sector logístico e industrial de Paraguay con resultados probados.</p>
       </div>
-      <div class="why-card">
+      <div class="why-card animate" data-anim="fade-up">
         <div class="why-num">02</div>
         <h4>Equipo Especializado</h4>
         <p>Personal calificado y capacitado continuamente en normas de seguridad y procedimientos operativos.</p>
       </div>
-      <div class="why-card">
+      <div class="why-card animate" data-anim="fade-up">
         <div class="why-num">03</div>
         <h4>Soluciones a Medida</h4>
         <p>Entendemos las necesidades específicas de cada industria y adaptamos nuestros servicios a sus requerimientos.</p>
       </div>
-      <div class="why-card">
+      <div class="why-card animate" data-anim="fade-up">
         <div class="why-num">04</div>
         <h4>Seguridad Primero</h4>
         <p>Operamos bajo estrictos estándares de seguridad para proteger a nuestro personal, su carga y sus instalaciones.</p>
@@ -377,15 +198,14 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="testimonials">
   <div class="section-inner">
-    <div class="section-head">
+    <div class="section-head animate" data-anim="fade-up">
       <span class="section-label">Lo que dicen</span>
       <h2 class="section-title">Clientes que confían en nosotros</h2>
     </div>
     <div class="testi-grid">
-      <div class="testi-card">
+      <div class="testi-card animate" data-anim="fade-up">
         <div class="testi-stars">
           <svg viewBox="0 0 16 16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
           <svg viewBox="0 0 16 16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
@@ -396,7 +216,7 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
         <p>"Excelente servicio y puntualidad en la carga de nuestras barcazas graneleras. Un aliado estratégico indispensable en nuestros procesos logísticos portuarios."</p>
         <span class="testi-author">— Cliente Sector Agroindustrial</span>
       </div>
-      <div class="testi-card">
+      <div class="testi-card animate" data-anim="fade-up">
         <div class="testi-stars">
           <svg viewBox="0 0 16 16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
           <svg viewBox="0 0 16 16"><path d="M8 1l1.8 3.6L14 5.3l-3 2.9.7 4.1L8 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z"/></svg>
@@ -411,10 +231,9 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
   </div>
 </section>
 
-<!-- CONTACT STRIP -->
 <section class="contact-strip">
   <div class="contact-inner">
-    <div>
+    <div class="animate" data-anim="fade-up">
       <h2>¿Necesita nuestros servicios?</h2>
       <p>Estamos en San Antonio, Paraguay. Contáctenos hoy mismo y cuéntenos sobre su proyecto.</p>
       <div style="margin-top:1.25rem;display:flex;gap:1rem;flex-wrap:wrap">
@@ -422,14 +241,14 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
         <a href="contact.html" class="btn-outline">Ver Contacto</a>
       </div>
     </div>
-    <div class="contact-details">
+    <div class="contact-details animate" data-anim="fade-up">
       <div class="contact-detail-item">
         <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09A16 16 0 0016.09 16.1l.45-.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        <a href="https://wa.me/595981142055" target="_blank" style="color:white">+595 981 142055</a>
+        <a href="https://wa.me/595981142055" target="_blank">+595 981 142055</a>
       </div>
       <div class="contact-detail-item">
         <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <a href="mailto:ho.estibajes@gmail.com" style="color:white">ho.estibajes@gmail.com</a>
+        <a href="mailto:ho.estibajes@gmail.com">ho.estibajes@gmail.com</a>
       </div>
       <div class="contact-detail-item">
         <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -439,11 +258,10 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes">
+      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes" width="48" height="48">
       <p>Empresa especializada en estibaje marítimo, estibaje de camiones y logística industrial en Paraguay.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/ho.estibajes/" target="_blank" aria-label="Facebook">
@@ -470,17 +288,30 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
         <li><a href="services.html">Mantenimiento</a></li>
       </ul>
     </div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="https://wa.me/595981142055" target="_blank">+595 981 142055</a></li>
+        <li><a href="mailto:ho.estibajes@gmail.com">ho.estibajes@gmail.com</a></li>
+        <li><span style="color:rgba(255,255,255,0.55);font-size:0.875rem">San Antonio, Paraguay</span></li>
+      </ul>
+    </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 HO Estibajes y Marítimos S.R.L. Todos los derechos reservados.</p>
+    <p>&copy; 2026 HO Estibajes y Marítimos S.R.L. Todos los derechos reservados.</p>
     <p>San Antonio, Paraguay</p>
   </div>
 </footer>
 
-<script>
-const toggle = document.getElementById('navToggle');
-const mobile = document.getElementById('navMobile');
-toggle.addEventListener('click', () => mobile.classList.toggle('open'));
-</script>
+<a class="whatsapp-float" href="https://wa.me/595981142055" target="_blank" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.536 3.66 1.458 5.175L2 22l4.825-1.458A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+  <span class="whatsapp-tooltip">Escríbanos</span>
+</a>
+
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="js/main.js"></script>
 </body>
 </html>

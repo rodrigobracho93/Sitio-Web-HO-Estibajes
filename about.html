@@ -5,159 +5,29 @@
 <title>Sobre Nosotros | HO Estibajes y Marítimos S.R.L.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Conozca la trayectoria de HO Estibajes y Marítimos S.R.L., líderes en soluciones logísticas, estibaje fluvial y terrestre en San Antonio, Paraguay.">
-<meta name="author" content="HO Estibajes y Marítimos S.R.L.">
 <link rel="icon" href="img/logoHO.ico" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-:root{
-  --navy:#0B1F3A;
-  --navy-mid:#122847;
-  --navy-light:#1A3A5C;
-  --steel:#2E6DA4;
-  --steel-light:#4A8FC0;
-  --amber:#E8A020;
-  --amber-dark:#C48318;
-  --off-white:#F5F3EE;
-  --gray-100:#ECEAE5;
-  --gray-300:#B8B5AE;
-  --gray-500:#7A7770;
-  --gray-800:#2C2A27;
-  --white:#FFFFFF;
-  --font-display:'Barlow Condensed',sans-serif;
-  --font-body:'Inter',sans-serif;
-  --radius:6px;
-  --radius-lg:12px;
-  --shadow-card:0 2px 16px rgba(11,31,58,0.10);
-}
-
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);color:var(--gray-800);background:var(--white);line-height:1.65;font-size:16px}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:2px solid var(--steel)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{display:flex;align-items:center;gap:0.75rem}
-.nav-logo img{height:40px;width:auto}
-.nav-logo span{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--white);letter-spacing:0.03em;line-height:1.2}
-.nav-links{display:flex;gap:0.25rem;list-style:none}
-.nav-links a{display:block;padding:0.4rem 0.85rem;color:rgba(255,255,255,0.8);font-size:0.88rem;font-weight:500;border-radius:var(--radius);transition:background 0.18s,color 0.18s}
-.nav-links a:hover,.nav-links a.active{background:var(--steel);color:var(--white)}
-.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.25rem;color:var(--white)}
-.nav-toggle svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
-.nav-mobile{display:none;background:var(--navy-mid);padding:1rem 1.5rem;list-style:none;gap:0.25rem;flex-direction:column}
-.nav-mobile a{display:block;padding:0.65rem 0.85rem;color:rgba(255,255,255,0.85);font-size:0.95rem;font-weight:500;border-radius:var(--radius);transition:background 0.18s}
-.nav-mobile a:hover{background:var(--steel);color:var(--white)}
-.nav-mobile.open{display:flex}
-
-/* HERO INTERNO */
-.inner-hero{background:var(--navy);position:relative;overflow:hidden;padding:3.5rem 1.5rem;border-bottom:4px solid var(--amber)}
-.inner-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,31,58,0.98) 50%,rgba(46,109,164,0.4) 100%);z-index:1}
-.inner-hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto}
-.inner-hero h1{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:var(--white);letter-spacing:0.02em}
-
-/* SECTIONS SHARED */
-.section{padding:4.5rem 1.5rem}
-.section-inner{max-width:1100px;margin:0 auto}
-.section-label{display:inline-block;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel);margin-bottom:0.6rem}
-.section-title{font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:1rem}
-.section-head{margin-bottom:3rem}
-
-/* BOTONES */
-.btn-primary{background:var(--amber);color:var(--navy);font-weight:600;font-size:0.92rem;padding:0.75rem 1.6rem;border-radius:var(--radius);border:none;cursor:pointer;transition:background 0.18s,transform 0.15s;display:inline-block;text-align:center}
-.btn-primary:hover{background:var(--amber-dark);transform:translateY(-1px)}
-
-/* BLOQUE HISTORIA PRINCIPAL */
-.about-main{display:flex;flex-direction:column;gap:1.5rem;max-width:850px;margin-bottom:4rem}
-.about-main h2{font-family:var(--font-display);font-size:2rem;color:var(--navy);font-weight:700}
-.about-main h2 span{color:var(--steel)}
-.about-main p{text-align:justify;color:var(--gray-800);font-size:1.02rem;line-height:1.7}
-
-/* REGLA DIVISIONAL */
-.divider{height:1px;background:var(--gray-100);width:100%;margin:3.5rem 0}
-
-/* TRIPLE COLUMNA INFO */
-.info-triple-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;align-items:start}
-.info-col h3{font-family:var(--font-display);font-size:1.6rem;color:var(--navy);margin-bottom:1.25rem;border-bottom:2px solid var(--off-white);padding-bottom:0.5rem}
-.info-col p{text-align:justify;font-size:0.95rem;color:var(--gray-800);margin-bottom:1rem}
-
-/* ACORDEÓN NATIVO (DETALLES) */
-.accordion-group{display:flex;flex-direction:column;gap:0.75rem}
-details.accordion-item{background:var(--off-white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--gray-100);transition:background 0.2s}
-details.accordion-item[open]{background:var(--white);border-color:var(--steel)}
-summary.accordion-head{padding:0.75rem 1rem;font-weight:600;font-size:0.92rem;color:var(--navy-light);cursor:pointer;user-select:none;list-style:none;display:flex;align-items:center;justify-content:between}
-summary.accordion-head::marker, summary.accordion-head::-webkit-details-marker {display: none;}
-summary.accordion-head::before{content:'➔';display:inline-block;margin-right:0.5rem;font-size:0.75rem;color:var(--steel);transition:transform 0.2s}
-details.accordion-item[open] summary.accordion-head::before{transform:rotate(90deg);color:var(--amber-dark)}
-.accordion-body{padding:0.75rem 1rem 1rem;font-size:0.88rem;color:var(--gray-800);text-align:justify;border-top:1px solid var(--gray-100)}
-
-/* BARRAS DE EFICIENCIA / PROGRESO */
-.skills-group{display:flex;flex-direction:column;gap:1.25rem}
-.skill-item h4{font-size:0.85rem;font-weight:600;color:var(--navy-light);margin-bottom:0.4rem}
-.progress-bar-bg{background:var(--off-white);height:8px;border-radius:4px;overflow:hidden;position:relative}
-.progress-bar-fill{height:100%;border-radius:4px;transition:width 1s ease-in-out}
-
-/* SECCIÓN EQUIPO */
-.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:2rem}
-.team-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-100);box-shadow:var(--shadow-card);text-align:center;transition:transform 0.2s}
-.team-card:hover{transform:translateY(-3px)}
-.team-card img{width:100%;height:200px;object-fit:cover;background-color:var(--navy-light)}
-.team-info{padding:1.25rem}
-.team-info h4{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:0.25rem}
-.team-info .deg{font-size:0.82rem;font-weight:500;color:var(--steel);text-transform:uppercase;letter-spacing:0.03em}
-
-/* FOOTER */
-footer{background:var(--navy);padding:3rem 1.5rem 0}
-.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.1)}
-.footer-brand img{height:44px;margin-bottom:0.75rem}
-.footer-brand p{color:rgba(255,255,255,0.6);font-size:0.85rem;line-height:1.6;max-width:240px;margin-bottom:1rem}
-.footer-social a{width:34px;height:34px;border-radius:var(--radius);background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);transition:background 0.18s,color 0.18s}
-.footer-social a:hover{background:var(--steel);color:var(--white)}
-.footer-social svg{width:16px;height:16px;fill:currentColor}
-.footer-col h5{font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:1.2rem}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
-.footer-col ul a{font-size:0.85rem;color:rgba(255,255,255,0.65);transition:color 0.18s}
-.footer-col ul a:hover{color:var(--white)}
-.footer-bottom{max-width:1100px;margin:0 auto;padding:1.25rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
-.footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.4)}
-
-/* RESPONSIVE DESIGN */
-@media(max-width:960px){
-  .info-triple-grid{grid-template-columns:1fr;gap:2.5rem}
-  .footer-inner{grid-template-columns:1fr 1fr}
-}
-@media(max-width:640px){
-  .nav-links{display:none}
-  .nav-toggle{display:block}
-  .section{padding:3rem 1.25rem}
-  .inner-hero{padding:2.5rem 1.25rem}
-  .footer-inner{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;text-align:center}
-}
-</style>
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes">
+      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes y Marítimos" width="40" height="40">
       <span>HO Estibajes<br>y Marítimos</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="about.html" class="active">Sobre Nosotros</a></li>
+      <li><a href="about.html">Sobre Nosotros</a></li>
       <li><a href="services.html">Servicios</a></li>
       <li><a href="portfolio.html">Portafolio</a></li>
       <li><a href="pricing.html">Precios</a></li>
       <li><a href="contact.html">Contacto</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
       <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
@@ -171,19 +41,17 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
   </ul>
 </nav>
 
-<!-- SECCIÓN ENCABEZADO INTERNO -->
 <section class="inner-hero">
   <div class="inner-hero-inner">
     <h1>Sobre Nosotros</h1>
+    <div class="breadcrumb"><a href="index.html">Inicio</a> <span>/</span> <span>Sobre Nosotros</span></div>
   </div>
 </section>
 
-<!-- SECCIÓN CONTENIDO PRINCIPAL -->
 <section class="section">
   <div class="section-inner">
-    
-    <!-- Trayectoria e Identidad -->
-    <div class="about-main">
+
+    <div class="about-main animate" data-anim="fade-up">
       <span class="section-label">Nuestra Identidad</span>
       <h2>Un equipo comprometido con la <span>Excelencia Logística</span></h2>
       <p><strong>HO Estibajes y Marítimos S.R.L.</strong> es una empresa paraguaya constituida con el firme propósito de brindar soluciones eficientes y seguras en el rubro del estibaje y la logística integral. Operando estratégicamente desde la zona portuaria de San Antonio, nos hemos consolidado como un eslabón clave para el comercio nacional e internacional, facilitando el trasbordo y movimiento seguro de mercaderías terrestres y fluviales.</p>
@@ -195,44 +63,53 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
 
     <div class="divider"></div>
 
-    <!-- Triple Columna Informativa -->
     <div class="info-triple-grid">
-      
-      <!-- Columna 1 -->
-      <div class="info-col">
+
+      <div class="info-col animate" data-anim="fade-up">
         <h3>¿Por qué elegirnos?</h3>
         <p>En el dinámico entorno portuario y de transporte, la experiencia y la capacidad de respuesta inmediata marcan la diferencia. <strong>HO Estibajes y Marítimos S.R.L.</strong> ofrece confiabilidad garantizada en cada tonelada movilizada.</p>
         <p>Optimizamos los tiempos de carga y descarga, reduciendo los costos operativos por demoras y asegurando la integridad de sus productos gracias a cuadrillas entrenadas bajo estándares rigurosos.</p>
       </div>
 
-      <!-- Columna 2: Acordeón Nativo -->
-      <div class="info-col">
+      <div class="info-col animate" data-anim="fade-up">
         <h3>Nuestra Solución</h3>
         <div class="accordion-group">
-          
+
           <details class="accordion-item" open>
-            <summary class="accordion-head">Estibaje Fluvial Eficiente</summary>
+            <summary class="accordion-head">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              Estibaje Fluvial Eficiente
+            </summary>
             <div class="accordion-body">
               Carga, descarga y nivelación técnica de barcazas graneleras. Maximizamos el volumen de transporte garantizando la perfecta estabilidad estructural y de flotación en la Hidrovía.
             </div>
           </details>
 
           <details class="accordion-item">
-            <summary class="accordion-head">Logística Terrestre y Tolvas</summary>
+            <summary class="accordion-head">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              Logística Terrestre y Tolvas
+            </summary>
             <div class="accordion-body">
               Control operativo absoluto en la descarga de camiones pesados directo a tolvas de transferencia, eliminando las pérdidas físicas de producto o mermas a granel.
             </div>
           </details>
 
           <details class="accordion-item">
-            <summary class="accordion-head">Mantenimiento de Terminales</summary>
+            <summary class="accordion-head">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              Mantenimiento de Terminales
+            </summary>
             <div class="accordion-body">
               Limpieza técnica, desescombro y mantenimiento integral de áreas verdes perimetrales e infraestructura interna de terminales portuarias e industriales.
             </div>
           </details>
 
           <details class="accordion-item">
-            <summary class="accordion-head">Compromiso de Seguridad</summary>
+            <summary class="accordion-head">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+              Compromiso de Seguridad
+            </summary>
             <div class="accordion-body">
               Aplicación rigurosa de protocolos de seguridad industrial y dotación completa de Equipos de Protección Individual (EPI) para mitigar riesgos en zonas de alta complejidad.
             </div>
@@ -241,11 +118,10 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
         </div>
       </div>
 
-      <!-- Columna 3: Barras de Eficiencia -->
-      <div class="info-col">
+      <div class="info-col animate" data-anim="fade-up">
         <h3>Nuestra Eficiencia</h3>
         <div class="skills-group">
-          
+
           <div class="skill-item">
             <h4>Operaciones Marítimas y Fluviales (95%)</h4>
             <div class="progress-bar-bg">
@@ -281,64 +157,56 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
 
     <div class="divider"></div>
 
-    <!-- Sección Equipo Humano -->
     <div class="section-head" style="margin-bottom: 2rem;">
       <span class="section-label">Profesionales a su servicio</span>
       <h3 class="section-title" style="font-size: 2rem;">Nuestro Equipo Humano</h3>
     </div>
 
     <div class="team-grid">
-      
-      <div class="team-card">
-        <img src="img/team1.jpg" alt="Cuadrillas Navales">
+      <div class="team-card animate" data-anim="fade-up">
+        <img src="img/team1.jpg" alt="Cuadrillas navales de estibadores profesionales" loading="lazy" width="220" height="200">
         <div class="team-info">
           <h4>Cuadrillas Navales</h4>
           <span class="deg">Estibadores Profesionales</span>
         </div>
       </div>
-
-      <div class="team-card">
-        <img src="img/team2.jpg" alt="Operadores de Tierra">
+      <div class="team-card animate" data-anim="fade-up">
+        <img src="img/team2.jpg" alt="Operadores de tierra control de tolvas y camiones" loading="lazy" width="220" height="200">
         <div class="team-info">
           <h4>Operadores de Tierra</h4>
           <span class="deg">Control de Tolvas y Camiones</span>
         </div>
       </div>
-
-      <div class="team-card">
-        <img src="img/team3.jpg" alt="Dirección General">
+      <div class="team-card animate" data-anim="fade-up">
+        <img src="img/team3.jpg" alt="Dirección general de HO Estibajes" loading="lazy" width="220" height="200">
         <div class="team-info">
           <h4>Dirección General</h4>
           <span class="deg">Planificación Estratégica</span>
         </div>
       </div>
-
-      <div class="team-card">
-        <img src="img/team4.jpg" alt="Supervisores HSE">
+      <div class="team-card animate" data-anim="fade-up">
+        <img src="img/team4.jpg" alt="Supervisores de seguridad higiene y ambiente" loading="lazy" width="220" height="200">
         <div class="team-info">
           <h4>Supervisores HSE</h4>
           <span class="deg">Seguridad, Higiene y Ambiente</span>
         </div>
       </div>
-
     </div>
 
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes">
+      <img src="img/logoHO(120x120).png" alt="Logo HO Estibajes" width="48" height="48">
       <p>Empresa especializada en estibaje marítimo, estibaje de camiones y logística industrial en Paraguay.</p>
-      <div style="display:flex; gap:0.5rem" class="footer-social">
+      <div class="footer-social">
         <a href="https://www.facebook.com/ho.estibajes/" target="_blank" aria-label="Facebook">
           <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
         </a>
       </div>
     </div>
-    
     <div class="footer-col">
       <h5>Contacto</h5>
       <ul style="color:rgba(255,255,255,0.6); font-size:0.85rem; display:flex; flex-direction:column; gap:0.4rem">
@@ -349,7 +217,6 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
         <li style="color:var(--white)">ho.estibajes@gmail.com</li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h5>Enlaces Rápidos</h5>
       <ul>
@@ -360,7 +227,6 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
         <li><a href="contact.html">Contacto Directo</a></li>
       </ul>
     </div>
-
     <div class="footer-col">
       <h5>Líneas de Servicios</h5>
       <ul>
@@ -370,30 +236,21 @@ footer{background:var(--navy);padding:3rem 1.5rem 0}
       </ul>
     </div>
   </div>
-  
   <div class="footer-bottom">
-    <p>© 2026 HO Estibajes y Marítimos S.R.L. Todos los derechos reservados.</p>
+    <p>&copy; 2026 HO Estibajes y Marítimos S.R.L. Todos los derechos reservados.</p>
     <p>San Antonio, Paraguay</p>
   </div>
 </footer>
 
-<script>
-// Menú de navegación móvil responsive
-const toggle = document.getElementById('navToggle');
-const mobile = document.getElementById('navMobile');
-toggle.addEventListener('click', () => mobile.classList.toggle('open'));
+<a class="whatsapp-float" href="https://wa.me/595981142055" target="_blank" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.536 3.66 1.458 5.175L2 22l4.825-1.458A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+  <span class="whatsapp-tooltip">Escríbanos</span>
+</a>
 
-// Control de exclusividad del acordeón nativo (Opcional, cierra el anterior al abrir uno nuevo)
-const detailsElements = document.querySelectorAll('details.accordion-item');
-detailsElements.forEach((targetDetail) => {
-  targetDetail.addEventListener('click', () => {
-    detailsElements.forEach((detail) => {
-      if (detail !== targetDetail) {
-        detail.removeAttribute('open');
-      }
-    });
-  });
-});
-</script>
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="js/main.js"></script>
 </body>
 </html>
